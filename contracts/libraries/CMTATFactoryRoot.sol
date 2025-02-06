@@ -11,10 +11,15 @@ import "./CMTATFactoryInvariant.sol";
 abstract contract CMTATFactoryRoot is AccessControl, CMTATFactoryInvariant {
     /* ============ State Variables ============ */
     // Public
+    /** 
+    * @notice 
+    * Get the current version of the smart contract
+    */
+    string public constant VERSION = "0.1.0";
     address[] public cmtatsList;
     bool immutable public useCustomSalt;
     uint256 public cmtatCounterId;
-    /// mapping
+    /// internal mapping
     mapping(uint256 => address) internal cmtats;
     mapping(bytes32 => bool) internal customSaltUsed;
     
