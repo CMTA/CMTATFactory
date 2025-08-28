@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const { ZERO_ADDRESS, CMTAT_DEPLOYER_ROLE } = require('../utils.js')
+const { ZERO_ADDRESS, CMTAT_DEPLOYER_ROLE, extraInformationAttributes } = require('../utils.js')
 const {
   deployCMTATProxyImplementation,
   fixture,
@@ -22,8 +22,8 @@ describe('Deploy TP with Factory - Salt', function () {
     this.CMTATArg = [
       this.admin,
       ['CMTA Token', 'CMTAT', DEPLOYMENT_DECIMAL],
-      ['CMTAT_ISIN', 'https://cmta.ch', 'CMTAT_info'],
-      [ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS]
+      extraInformationAttributes,
+      [ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS]
     ]
   })
 
@@ -65,7 +65,7 @@ describe('Deploy TP with Factory - Salt', function () {
       let args = events[0].args
       expect(args[1]).to.equal(0)
       const CMTAT_ADDRESS = args[0]
-      const MyContract = await ethers.getContractFactory('CMTAT_PROXY')
+      const MyContract = await ethers.getContractFactory('CMTATUpgradeable')
       const CMTAT_PROXY = MyContract.attach(CMTAT_ADDRESS)
       // Check address with ID
       expect(await this.FACTORY.CMTATProxyAddress(0)).to.equal(CMTAT_ADDRESS)

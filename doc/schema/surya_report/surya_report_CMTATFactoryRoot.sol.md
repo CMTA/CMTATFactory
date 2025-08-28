@@ -17,7 +17,7 @@
 ||||||
 | **CMTATFactoryRoot** | Implementation | AccessControl, CMTATFactoryInvariant |||
 | └ | <Constructor> | Public ❗️ | 🛑  |NO❗️ |
-| └ | CMTATProxyAddress | External ❗️ |   |NO❗️ |
+| └ | CMTATProxyAddress | Public ❗️ |   |NO❗️ |
 | └ | _checkAndDetermineDeploymentSalt | Internal 🔒 | 🛑  | |
 
 
