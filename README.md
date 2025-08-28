@@ -348,12 +348,14 @@ are the latest ones that we tested:
 
 - npm 10.2.5
 - Hardhat ^2.22.7
-- Solidity [0.8.30](https://docs.soliditylang.org/en/v0.8.30/) (via solc-js)
 - Node 20.5.0
-- CMTAT [v3.0.0](https://github.com/CMTA/CMTAT/releases/tag/v3.0.0)
-- OpenZeppelin Contracts (Node.js module) [v5.4.0](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.2.0) 
-- OpenZeppelin Contracts (Node.js module) [v5.4.0](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.4.0) 
-- OpenZeppelin Contracts Upgradeable (Node.js module) [v5.4.0](https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/releases/tag/v5.4.0)
+- Smart contract
+  - Solidity [0.8.30](https://docs.soliditylang.org/en/v0.8.30/) (via solc-js)
+  - EVM: Prague
+  - CMTAT [v3.0.0](https://github.com/CMTA/CMTAT/releases/tag/v3.0.0)
+  - OpenZeppelin Contracts (Node.js module) [v5.4.0](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.4.0) 
+  - OpenZeppelin Contracts Upgradeable (Node.js module) [v5.4.0](https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/releases/tag/v5.4.0)
+
 
 
 ### Installation
