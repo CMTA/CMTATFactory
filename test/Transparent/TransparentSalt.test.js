@@ -1,5 +1,9 @@
 const { expect } = require('chai')
-const { ZERO_ADDRESS, CMTAT_DEPLOYER_ROLE, extraInformationAttributes } = require('../utils.js')
+const {
+  ZERO_ADDRESS,
+  CMTAT_DEPLOYER_ROLE,
+  extraInformationAttributes
+} = require('../utils.js')
 const {
   deployCMTATProxyImplementation,
   fixture,

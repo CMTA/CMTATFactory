@@ -1,5 +1,9 @@
 const { expect } = require('chai')
-const { ZERO_ADDRESS, CMTAT_DEPLOYER_ROLE, extraInformationAttributes } = require('../utils.js')
+const {
+  ZERO_ADDRESS,
+  CMTAT_DEPLOYER_ROLE,
+  extraInformationAttributes
+} = require('../utils.js')
 const {
   deployCMTATProxyUUPSImplementation,
   fixture,
@@ -74,7 +78,9 @@ describe('Deploy UUPPSwith Factory', function () {
       expect(await this.FACTORY.CMTATProxyAddress(0)).to.equal(
         computedCMTATAddress
       )
-      const MyContract = await ethers.getContractFactory('CMTATUpgradeableUUPS')
+      const MyContract = await ethers.getContractFactory(
+        'CMTATUpgradeableUUPS'
+      )
       const CMTAT_PROXY = MyContract.attach(CMTAT_ADDRESS)
       await CMTAT_PROXY.connect(this.admin).mint(this.admin, 100)
       // Second deployment
