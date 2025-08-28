@@ -20,10 +20,6 @@ It is used to perform a code coverage
 
 #### Nomiclabs - Hardhat
 
-**[hardhat-truffle5](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5)**
-
-[Hardhat](https://hardhat.org/) plugin for integration with TruffleContract from Truffle 5. This allows tests and scripts written for Truffle to work with Hardhat.
-
 **[hardhat-web3](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-web3)**
 
 This plugin integrates [Web3.js](https://github.com/ethereum/web3.js) `1.x` into [Hardhat](https://hardhat.org/).
@@ -162,27 +158,15 @@ From the version v2.3.0, this command is not working and generates the following
 
 > RangeError: Maximum call stack size exceeded
 
-| Description                                                  | Command                                |
-| ------------------------------------------------------------ | -------------------------------------- |
-| Generate UML for all modules                                 | `npm run-script uml-all`               |
-| Generate UML for the interfaces EIP1404                      | `npm run-script uml-i-eip1404`         |
-| Generate UML for the contracts CMTAT_STANDALONE, CMTAT_PROXY && CMTAT_BASE | `npm run-script uml-partial`           |
-| Generate UML for core modules                                | `npm run-script uml-modules-mandatory` |
-| Generate UML for extensions modules                          | `npm run-script uml-modules-optional`  |
-| Generate UML for security modules                            | `npm run-script uml-modules-security`  |
-| Generate UML for mocks                                       | `npm run-script uml-mocks`             |
-
-
-
 ### [Surya](https://github.com/ConsenSys/surya)
 
 To generate documentation with surya, you can call the three bash scripts in doc/script
 
 | Task                 | Script                      | Command exemple                                              |
 | -------------------- | --------------------------- | ------------------------------------------------------------ |
-| Generate graph       | script_surya_graph.sh       | npx surya graph -i contracts/**/*.sol <br />npx surya graph contracts/modules/CMTAT_BASE.sol |
-| Generate inheritance | script_surya_inheritance.sh | npx surya inheritance contracts/modules/CMTAT_BASE.sol -i <br />npx surya inheritance contracts/modules/CMTAT_BASE.sol |
-| Generate report      | script_surya_report.sh      | npx surya mdreport -i surya_report.md contracts/modules/CMTAT_BASE.sol <br />npx surya mdreport surya_report.md contracts/modules/CMTAT_BASE.sol |
+| Generate graph       | script_surya_graph.sh       | npx surya graph -i contracts/**/*.sol <br /                  |
+| Generate inheritance | script_surya_inheritance.sh | npx surya inheritance contracts/CMTAT_TP_FACTORY.sol -i <br />npx surya inheritance contracts/CMTAT_TP_FACTORY.sol |
+| Generate report      | script_surya_report.sh      | npx surya mdreport -i surya_report.md contracts/CMTAT_TP_FACTORY.sol <br />npx surya mdreport surya_report.md contracts/CMTAT_TP_FACTORY.sol |
 
 In the report, the path for the different files are indicated in absolute. You have to remove the part which correspond to your local filesystem.
 
@@ -207,21 +191,3 @@ slither .  --checklist --filter-paths "openzeppelin-contracts-upgradeable|openze
 ```
 
 
-
-
-
-### [Mythril](https://github.com/Consensys/mythril)
-
-- Standalone
-
-```bash
-myth analyze contracts/CMTAT_STANDALONE.sol --solc-json solc_setting.json > myth_standalone_report.md
-```
-
-- With proxy
-
-```bash
-myth analyze contracts/CMTAT_PROXY.sol --solc-json solc_setting.json > myth_proxy_report.md
-```
-
-File path for `solc` is configured in `solc_setting.json`

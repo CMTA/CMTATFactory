@@ -1,4 +1,4 @@
-const { ZERO_ADDRESS } = require('../utils.js')
+const { ZERO_ADDRESS, extraInformationAttributes } = require('../utils.js')
 const { expect } = require('chai')
 const DEPLOYMENT_DECIMAL = 0
 const {
@@ -20,8 +20,8 @@ describe('Deploy Beacon with Factory', function () {
     this.CMTATArg = [
       this.admin,
       ['CMTA Token', 'CMTAT', DEPLOYMENT_DECIMAL],
-      ['CMTAT_ISIN', 'https://cmta.ch', 'CMTAT_info'],
-      [ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS]
+      extraInformationAttributes,
+      [ZERO_ADDRESS, ZERO_ADDRESS, ZERO_ADDRESS]
     ]
   })
   context('BeaconDeployment', function () {
@@ -37,7 +37,7 @@ describe('Deploy Beacon with Factory', function () {
         this.CMTATArg
       )
       const CMTAT_ADDRESS = await this.FACTORY.CMTATProxyAddress(0)
-      const MyContract = await ethers.getContractFactory('CMTAT_PROXY')
+      const MyContract = await ethers.getContractFactory('CMTATUpgradeable')
       const CMTAT_PROXY = MyContract.attach(CMTAT_ADDRESS)
       // Act + Assert
       await CMTAT_PROXY.connect(this.admin).mint(this.admin, 100)

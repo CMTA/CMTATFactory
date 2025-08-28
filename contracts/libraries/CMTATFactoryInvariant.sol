@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 
-import {ICMTATConstructor} from "../../CMTAT/contracts/interfaces/ICMTATConstructor.sol";
+import {ICMTATConstructor} from "../../CMTAT/contracts/interfaces/technical/ICMTATConstructor.sol";
 
 /**
 * @notice List of Invariant (struct, constant, events)
@@ -13,7 +13,7 @@ abstract contract CMTATFactoryInvariant {
     struct CMTAT_ARGUMENT{
         address CMTATAdmin;
         ICMTATConstructor.ERC20Attributes ERC20Attributes;
-        ICMTATConstructor.BaseModuleAttributes baseModuleAttributes;
+        ICMTATConstructor.ExtraInformationAttributes extraInformationAttributes;
         ICMTATConstructor.Engine engines;
     }
     /* ============ State Variables ============ */

@@ -20,6 +20,13 @@ Please follow <https://changelog.md/> conventions.
 
 
 
+## 0.2.0
+
+- Update CMTAT to v.3.0.0
+- Update OpenZeppelin to v5.4.0
+- Update Solidity to v0.8.30
+- Improve code and documentation
+
 ## 0.1.0
 
 First release !
